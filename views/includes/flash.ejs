@@ -1,0 +1,40 @@
+<style>
+
+.alert-success{
+    background-color: #DFF0D8;
+    color: #3C763D;
+    margin-top: 10px;
+}
+.alert-danger{
+    background-color: #F2DEDE;
+    color: #A94442;
+    margin-top: 10px;
+}
+
+</style>
+
+
+<% if(success && success.length){ %>
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+        <%= success %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<% if(error && error.length){ %>
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+        <%= error %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<script>
+    setTimeout(() => {
+        const flash = document.querySelector(".alert-success");
+        flash.style.display = 'none';
+    }, 3000);
+    // setTimeout(() => {
+    //     const flash = document.querySelector(".alert-danger");
+    //     flash.style.display = 'none';
+    // }, 4000);
+</script>
